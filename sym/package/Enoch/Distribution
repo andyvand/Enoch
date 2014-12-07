@@ -1,0 +1,1917 @@
+<?xml version="1.0"?>
+
+<installer-gui-script minSpecVersion='1'>
+
+    <options hostArchitectures='i386' allow-external-scripts="no"/>
+    <domains enable_anywhere="true"/>
+
+    <welcome file='Welcome.html'/>
+    <license file="License.rtf" sla="EA0401"/>
+    <readme  file='Description.html'/>
+    <conclusion file="Conclusion.html"/>
+    <background file='background' alignment='topleft' scaling='no'/>
+
+    <title>Chameleon_Package_Title</title>
+
+    <script>
+
+    var bootPlist = null;
+    if (my.target) {
+        var boot_plist_filenames = new Array( 'org.chameleon.Boot.plist', 'com.apple.Boot.plist' );
+        for ( var i = 0; i &lt; boot_plist_filenames.length; i++ ) {
+            bootPlist = system.files.plistAtPath( my.target.mountpoint + '/Extra/' + boot_plist_filenames[i] );
+            if (bootPlist)
+                break;
+        }
+    }
+
+    function installCheckScript() {
+        var obj = system.ioregistry.matchingClass("AppleSMC");
+        if (obj) {
+            system.log('installCheckScript: Found AppleSMC');
+            my.result.message = system.localizedStringWithFormat('Intel_Mac_message');
+            my.result.type = 'Fatal';
+            return false;
+        }
+        system.log('installCheckScript: Failed.');
+        return false;
+    }
+
+    function volCheckScript() {
+        system.log('volCheckScript: Failed.');
+        return true;
+    }
+
+    function systemHasGPT() {
+        var obj = system.ioregistry.matchingName("EFI System Partition");
+        if (obj)
+            return true;
+        return false;
+    }
+
+    function chameleon_boot_plist_exists() {
+        return bootPlist ? true : false;
+    }
+
+    function check_chameleon_bool_option(key, value) {
+		if ( bootPlist &amp;&amp; bootPlist[ key ] )
+            // check if the first letter (in lowercase) is the same
+            return bootPlist[ key ].charAt(0).toLowerCase() == value.charAt(0).toLowerCase();
+        return false;
+	}
+
+    function check_chameleon_text_option(key, value) {
+		if ( bootPlist &amp;&amp; bootPlist[ key ] )
+            return bootPlist[ key ] == value; // check if the strings are equal
+        return false;
+	}
+
+    function check_chameleon_list_option(key, value) {
+        if ( bootPlist &amp;&amp; bootPlist[ key ] ) {
+            var items = bootPlist[ key ].split(" ");
+            for ( var i = 0; i &lt; items.length; i++ ) {
+                if (items[i] == value)
+                  return true;
+            }
+        }
+        return false;
+    }
+
+    </script>
+
+	<choices-outline>
+		<line choice="Pre"/>
+		<line choice="Core"/>
+		<line choice="Chameleon">
+			<line choice="Standard"/>
+			<line choice="noboot"/>
+		</line>
+		<line choice="Options">
+			<line choice="Audio">
+				<line choice="UseIntelHDMI"/>
+				<line choice="EnableHDMIAudio"/>
+			</line>
+			<line choice="Control">
+				<line choice="BootBanner"/>
+				<line choice="GUI"/>
+				<line choice="LegacyLogo"/>
+				<line choice="InstantMenu"/>
+				<line choice="QuietBoot"/>
+				<line choice="ShowInfo"/>
+				<line choice="Wait"/>
+			</line>
+			<line choice="General">
+				<line choice="arch"/>
+				<line choice="EHCIacquire"/>
+				<line choice="EthernetBuiltIn"/>
+				<line choice="EnableWifi"/>
+				<line choice="ForceHPET"/>
+				<line choice="ForceWake"/>
+				<line choice="ForceFullMemInfo"/>
+				<line choice="RestartFix"/>
+				<line choice="UHCIreset"/>
+				<line choice="UseMemDetect"/>
+				<line choice="UseKernelCache"/>
+				<line choice="Wake"/>
+				<line choice="PrivateData"/>
+			</line>
+			<line choice="HDAULayout">
+				<line choice="HDAULayoutIDx01"/>
+				<line choice="HDAULayoutIDx02"/>
+				<line choice="HDAULayoutIDx03"/>
+				<line choice="HDAULayoutIDx05"/>
+				<line choice="HDAULayoutIDx07"/>
+				<line choice="HDAULayoutIDx12"/>
+				<line choice="HDAULayoutIDx32"/>
+				<line choice="HDAULayoutIDx40"/>
+				<line choice="HDAULayoutIDx65"/>
+				<line choice="HDAULayoutIDx99"/>
+				<line choice="HDAULayoutIDx269"/>
+				<line choice="HDAULayoutIDx387"/>
+				<line choice="HDAULayoutIDx388"/>
+				<line choice="HDAULayoutIDx389"/>
+				<line choice="HDAULayoutIDx392"/>
+				<line choice="HDAULayoutIDx398"/>
+				<line choice="HDAULayoutIDx662"/>
+				<line choice="HDAULayoutIDx663"/>
+				<line choice="HDAULayoutIDx664"/>
+				<line choice="HDAULayoutIDx885"/>
+				<line choice="HDAULayoutIDx887"/>
+				<line choice="HDAULayoutIDx888"/>
+				<line choice="HDAULayoutIDx889"/>
+				<line choice="HDAULayoutIDx892"/>
+				<line choice="HDAULayoutIDx898"/>
+				<line choice="HDAULayoutIDxBD7"/>
+			</line>
+			<line choice="HDEFLayout">
+				<line choice="HDEFLayoutIDx01"/>
+				<line choice="HDEFLayoutIDx02"/>
+				<line choice="HDEFLayoutIDx03"/>
+				<line choice="HDEFLayoutIDx05"/>
+				<line choice="HDEFLayoutIDx07"/>
+				<line choice="HDEFLayoutIDx12"/>
+				<line choice="HDEFLayoutIDx32"/>
+				<line choice="HDEFLayoutIDx40"/>
+				<line choice="HDEFLayoutIDx65"/>
+				<line choice="HDEFLayoutIDx99"/>
+				<line choice="HDEFLayoutIDx269"/>
+				<line choice="HDEFLayoutIDx387"/>
+				<line choice="HDEFLayoutIDx388"/>
+				<line choice="HDEFLayoutIDx389"/>
+				<line choice="HDEFLayoutIDx392"/>
+				<line choice="HDEFLayoutIDx398"/>
+				<line choice="HDEFLayoutIDx662"/>
+				<line choice="HDEFLayoutIDx663"/>
+				<line choice="HDEFLayoutIDx664"/>
+				<line choice="HDEFLayoutIDx885"/>
+				<line choice="HDEFLayoutIDx887"/>
+				<line choice="HDEFLayoutIDx888"/>
+				<line choice="HDEFLayoutIDx889"/>
+				<line choice="HDEFLayoutIDx892"/>
+				<line choice="HDEFLayoutIDx898"/>
+				<line choice="HDEFLayoutIDxBD7"/>
+			</line>
+			<line choice="IntelAzul">
+				<line choice="IntelAzulx00"/>
+				<line choice="IntelAzulx01"/>
+				<line choice="IntelAzulx02"/>
+				<line choice="IntelAzulx03"/>
+				<line choice="IntelAzulx04"/>
+				<line choice="IntelAzulx05"/>
+				<line choice="IntelAzulx06"/>
+				<line choice="IntelAzulx07"/>
+				<line choice="IntelAzulx08"/>
+				<line choice="IntelAzulx09"/>
+				<line choice="IntelAzulx10"/>
+				<line choice="IntelAzulx11"/>
+				<line choice="IntelAzulx12"/>
+				<line choice="IntelAzulx13"/>
+				<line choice="IntelAzulx14"/>
+				<line choice="IntelAzulx15"/>
+			</line>
+			<line choice="IntelCapri">
+				<line choice="IntelCaprix00"/>
+				<line choice="IntelCaprix01"/>
+				<line choice="IntelCaprix02"/>
+				<line choice="IntelCaprix03"/>
+				<line choice="IntelCaprix04"/>
+				<line choice="IntelCaprix05"/>
+				<line choice="IntelCaprix06"/>
+				<line choice="IntelCaprix07"/>
+				<line choice="IntelCaprix08"/>
+				<line choice="IntelCaprix09"/>
+				<line choice="IntelCaprix10"/>
+				<line choice="IntelCaprix11"/>
+			</line>
+			<line choice="KernelFlags">
+				<line choice="Verbose"/>
+				<line choice="Singleusermode"/>
+				<line choice="Ignorecaches"/>
+				<line choice="Npci"/>
+				<line choice="Npci3"/>
+				<line choice="WaitingRootDevice"/>
+				<line choice="Darkwake"/>
+				<line choice="NvdaDrv1"/>
+				<line choice="kext-dev-mode1"/>
+				<line choice="Dart0"/>
+			</line>
+			<line choice="PowerManagement">
+				<line choice="CSTUsingSystemIO"/>
+				<line choice="DropSSDT"/>
+				<line choice="DropHPET"/>
+				<line choice="DropSBST"/>
+				<line choice="DropECDT"/>
+				<line choice="DropASFT"/>
+				<line choice="DropDMAR"/>
+				<line choice="EnableC2State"/>
+				<line choice="EnableC3State"/>
+				<line choice="EnableC4State"/>
+				<line choice="EnableC6State"/>
+				<line choice="EnableC7State"/>
+				<line choice="GenerateCStates"/>
+				<line choice="GeneratePStates"/>
+			</line>
+			<line choice="Resolution">
+				<line choice="1024x600x32"/>
+				<line choice="1024x768x32"/>
+				<line choice="1280x768x32"/>
+				<line choice="1280x800x32"/>
+				<line choice="1280x960x32"/>
+				<line choice="1280x1024x32"/>
+				<line choice="1366x768x32"/>
+				<line choice="1440x900x32"/>
+				<line choice="1600x900x32"/>
+				<line choice="1600x1200x32"/>
+				<line choice="1680x1050x32"/>
+				<line choice="1920x1080x32"/>
+				<line choice="1920x1200x32"/>
+			</line>
+			<line choice="Video">
+				<line choice="GraphicsEnabler"/>
+				<line choice="UseAtiROM"/>
+				<line choice="UseNvidiaROM"/>
+				<line choice="VBIOS"/>
+				<line choice="SkipIntelGfx"/>
+				<line choice="SkipNvidiaGfx"/>
+				<line choice="SkipAtiGfx"/>
+				<line choice="EnableBacklight"/>
+				<line choice="EnableDualLink"/>
+				<line choice="NvidiaGeneric"/>
+			</line>
+		</line>
+		<line choice="Keymaps">
+			<line choice="mac-de"/>
+			<line choice="mac-es"/>
+			<line choice="mac-fr"/>
+			<line choice="mac-it"/>
+			<line choice="mac-se"/>
+			<line choice="pc-fr"/>
+		</line>
+		<line choice="Themes">
+			<line choice="Default"/>
+		</line>
+		<line choice="Post"/>
+	</choices-outline>
+
+	<choice
+		id="Pre"
+		title="Pre_title"
+		description="Pre_description"
+		start_visible="false" start_selected="true">
+		<pkg-ref id="org.chameleon.pre"/>
+	</choice>
+
+	<choice
+		id="Core"
+		title="Core_title"
+		description="Core_description"
+		start_visible="false" start_selected="true">
+		<pkg-ref id="org.chameleon.core"/>
+	</choice>
+
+	<choice
+		id="Chameleon"
+		title="Chameleon_title"
+		description="Chameleon_description">
+	</choice>
+
+	<choice
+		id="Standard"
+		title="Standard_title"
+		description="Standard_description"
+		start_selected="true"
+		selected="!(choices['noboot'].selected)">
+		<pkg-ref id="org.chameleon.standard"/>
+	</choice>
+
+	<choice
+		id="noboot"
+		title="noboot_title"
+		description="noboot_description"
+		start_selected="false"
+		selected="!(choices['Standard'].selected)">
+		<pkg-ref id="org.chameleon.noboot"/>
+	</choice>
+
+	<choice
+		id="Options"
+		title="Options_title"
+		description="Options_description">
+	</choice>
+
+	<choice
+		id="Audio"
+		title="Audio_title"
+		description="Audio_description">
+	</choice>
+
+	<choice
+		id="UseIntelHDMI"
+		title="UseIntelHDMI_title"
+		description="UseIntelHDMI_description"
+		start_selected="check_chameleon_bool_option('UseIntelHDMI','Yes')">
+		<pkg-ref id="org.chameleon.options.audio.useintelhdmi"/>
+	</choice>
+
+	<choice
+		id="EnableHDMIAudio"
+		title="EnableHDMIAudio_title"
+		description="EnableHDMIAudio_description"
+		start_selected="check_chameleon_bool_option('EnableHDMIAudio','Yes')">
+		<pkg-ref id="org.chameleon.options.audio.enablehdmiaudio"/>
+	</choice>
+
+	<choice
+		id="Control"
+		title="Control_title"
+		description="Control_description">
+	</choice>
+
+	<choice
+		id="BootBanner"
+		title="BootBanner_title"
+		description="BootBanner_description"
+		start_selected="check_chameleon_bool_option('Boot Banner','No')">
+		<pkg-ref id="org.chameleon.options.control.bootbanner"/>
+	</choice>
+
+	<choice
+		id="GUI"
+		title="GUI_title"
+		description="GUI_description"
+		start_selected="check_chameleon_bool_option('GUI','No')">
+		<pkg-ref id="org.chameleon.options.control.gui"/>
+	</choice>
+
+	<choice
+		id="LegacyLogo"
+		title="LegacyLogo_title"
+		description="LegacyLogo_description"
+		start_selected="check_chameleon_bool_option('Legacy Logo','Yes')">
+		<pkg-ref id="org.chameleon.options.control.legacylogo"/>
+	</choice>
+
+	<choice
+		id="InstantMenu"
+		title="InstantMenu_title"
+		description="InstantMenu_description"
+		start_selected="check_chameleon_bool_option('Instant Menu','Yes')">
+		<pkg-ref id="org.chameleon.options.control.instantmenu"/>
+	</choice>
+
+	<choice
+		id="QuietBoot"
+		title="QuietBoot_title"
+		description="QuietBoot_description"
+		start_selected="check_chameleon_bool_option('QuietBoot','Yes')">
+		<pkg-ref id="org.chameleon.options.control.quietboot"/>
+	</choice>
+
+	<choice
+		id="ShowInfo"
+		title="ShowInfo_title"
+		description="ShowInfo_description"
+		start_selected="check_chameleon_bool_option('ShowInfo','Yes')">
+		<pkg-ref id="org.chameleon.options.control.showinfo"/>
+	</choice>
+
+	<choice
+		id="Wait"
+		title="Wait_title"
+		description="Wait_description"
+		start_selected="check_chameleon_bool_option('Wait','Yes')">
+		<pkg-ref id="org.chameleon.options.control.wait"/>
+	</choice>
+
+	<choice
+		id="General"
+		title="General_title"
+		description="General_description">
+	</choice>
+
+	<choice
+		id="arch"
+		title="arch_title"
+		description="arch_description"
+		start_selected="check_chameleon_text_option('arch','i386')">
+		<pkg-ref id="org.chameleon.options.general.arch"/>
+	</choice>
+
+	<choice
+		id="EHCIacquire"
+		title="EHCIacquire_title"
+		description="EHCIacquire_description"
+		start_selected="check_chameleon_bool_option('EHCIacquire','Yes')">
+		<pkg-ref id="org.chameleon.options.general.ehciacquire"/>
+	</choice>
+
+	<choice
+		id="EthernetBuiltIn"
+		title="EthernetBuiltIn_title"
+		description="EthernetBuiltIn_description"
+		start_selected="check_chameleon_bool_option('EthernetBuiltIn','Yes')">
+		<pkg-ref id="org.chameleon.options.general.ethernetbuiltin"/>
+	</choice>
+
+	<choice
+		id="EnableWifi"
+		title="EnableWifi_title"
+		description="EnableWifi_description"
+		start_selected="check_chameleon_bool_option('EnableWifi','Yes')">
+		<pkg-ref id="org.chameleon.options.general.enablewifi"/>
+	</choice>
+
+	<choice
+		id="ForceHPET"
+		title="ForceHPET_title"
+		description="ForceHPET_description"
+		start_selected="check_chameleon_bool_option('ForceHPET','Yes')">
+		<pkg-ref id="org.chameleon.options.general.forcehpet"/>
+	</choice>
+
+	<choice
+		id="ForceWake"
+		title="ForceWake_title"
+		description="ForceWake_description"
+		start_selected="check_chameleon_bool_option('ForceWake','Yes')">
+		<pkg-ref id="org.chameleon.options.general.forcewake"/>
+	</choice>
+
+	<choice
+		id="ForceFullMemInfo"
+		title="ForceFullMemInfo_title"
+		description="ForceFullMemInfo_description"
+		start_selected="check_chameleon_bool_option('ForceFullMemInfo','Yes')">
+		<pkg-ref id="org.chameleon.options.general.forcefullmeminfo"/>
+	</choice>
+
+	<choice
+		id="RestartFix"
+		title="RestartFix_title"
+		description="RestartFix_description"
+		start_selected="check_chameleon_bool_option('RestartFix','No')">
+		<pkg-ref id="org.chameleon.options.general.restartfix"/>
+	</choice>
+
+	<choice
+		id="UHCIreset"
+		title="UHCIreset_title"
+		description="UHCIreset_description"
+		start_selected="check_chameleon_bool_option('UHCIreset','Yes')">
+		<pkg-ref id="org.chameleon.options.general.uhcireset"/>
+	</choice>
+
+	<choice
+		id="UseMemDetect"
+		title="UseMemDetect_title"
+		description="UseMemDetect_description"
+		start_selected="check_chameleon_bool_option('UseMemDetect','No')">
+		<pkg-ref id="org.chameleon.options.general.usememdetect"/>
+	</choice>
+
+	<choice
+		id="UseKernelCache"
+		title="UseKernelCache_title"
+		description="UseKernelCache_description"
+		start_selected="check_chameleon_bool_option('UseKernelCache','Yes')">
+		<pkg-ref id="org.chameleon.options.general.usekernelcache"/>
+	</choice>
+
+	<choice
+		id="Wake"
+		title="Wake_title"
+		description="Wake_description"
+		start_selected="check_chameleon_bool_option('Wake','Yes')">
+		<pkg-ref id="org.chameleon.options.general.wake"/>
+	</choice>
+
+	<choice
+		id="PrivateData"
+		title="PrivateData_title"
+		description="PrivateData_description"
+		start_selected="check_chameleon_bool_option('PrivateData','No')">
+		<pkg-ref id="org.chameleon.options.general.privatedata"/>
+	</choice>
+
+	<choice
+		id="HDAULayout"
+		title="HDAULayout_title"
+		description="HDAULayout_description">
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx01"
+		title="HDAULayoutIDx01_title"
+		description="HDAULayoutIDx01_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','01000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx01"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx02"
+		title="HDAULayoutIDx02_title"
+		description="HDAULayoutIDx02_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','02000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx02"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx03"
+		title="HDAULayoutIDx03_title"
+		description="HDAULayoutIDx03_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','03000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx03"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx05"
+		title="HDAULayoutIDx05_title"
+		description="HDAULayoutIDx05_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','05000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx05"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx07"
+		title="HDAULayoutIDx07_title"
+		description="HDAULayoutIDx07_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','07000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx07"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx12"
+		title="HDAULayoutIDx12_title"
+		description="HDAULayoutIDx12_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','0C000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx12"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx32"
+		title="HDAULayoutIDx32_title"
+		description="HDAULayoutIDx32_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','20000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx32"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx40"
+		title="HDAULayoutIDx40_title"
+		description="HDAULayoutIDx40_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','28000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx40"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx65"
+		title="HDAULayoutIDx65_title"
+		description="HDAULayoutIDx65_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','41000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx65"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx99"
+		title="HDAULayoutIDx99_title"
+		description="HDAULayoutIDx99_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','63000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx99"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx269"
+		title="HDAULayoutIDx269_title"
+		description="HDAULayoutIDx269_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','0D010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx269"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx387"
+		title="HDAULayoutIDx387_title"
+		description="HDAULayoutIDx387_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','83010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx387"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx388"
+		title="HDAULayoutIDx388_title"
+		description="HDAULayoutIDx388_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','84010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx388"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx389"
+		title="HDAULayoutIDx389_title"
+		description="HDAULayoutIDx389_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','85010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx389"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx392"
+		title="HDAULayoutIDx392_title"
+		description="HDAULayoutIDx392_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','88010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx392"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx398"
+		title="HDAULayoutIDx398_title"
+		description="HDAULayoutIDx398_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','8E010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx398"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx662"
+		title="HDAULayoutIDx662_title"
+		description="HDAULayoutIDx662_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','96020000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx662"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx663"
+		title="HDAULayoutIDx663_title"
+		description="HDAULayoutIDx663_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','97020000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx663"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx664"
+		title="HDAULayoutIDx664_title"
+		description="HDAULayoutIDx664_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','98020000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx664"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx885"
+		title="HDAULayoutIDx885_title"
+		description="HDAULayoutIDx885_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','75030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx885"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx887"
+		title="HDAULayoutIDx887_title"
+		description="HDAULayoutIDx887_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','77030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx887"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx888"
+		title="HDAULayoutIDx888_title"
+		description="HDAULayoutIDx888_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','78030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx888"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx889"
+		title="HDAULayoutIDx889_title"
+		description="HDAULayoutIDx889_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','79030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx889"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx892"
+		title="HDAULayoutIDx892_title"
+		description="HDAULayoutIDx892_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','7C030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx898'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx892"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDx898"
+		title="HDAULayoutIDx898_title"
+		description="HDAULayoutIDx898_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','82030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx898"/>
+	</choice>
+
+	<choice
+		id="HDAULayoutIDxBD7"
+		title="HDAULayoutIDxBD7_title"
+		description="HDAULayoutIDxBD7_description"
+		start_selected="check_chameleon_text_option('HDAULayoutID','BD070000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDAULayoutIDx01'].selected || choices['HDAULayoutIDx02'].selected || choices['HDAULayoutIDx03'].selected || choices['HDAULayoutIDx05'].selected || choices['HDAULayoutIDx07'].selected || choices['HDAULayoutIDx12'].selected || choices['HDAULayoutIDx32'].selected || choices['HDAULayoutIDx40'].selected || choices['HDAULayoutIDx65'].selected || choices['HDAULayoutIDx99'].selected || choices['HDAULayoutIDx269'].selected || choices['HDAULayoutIDx387'].selected || choices['HDAULayoutIDx388'].selected || choices['HDAULayoutIDx389'].selected || choices['HDAULayoutIDx392'].selected || choices['HDAULayoutIDx398'].selected || choices['HDAULayoutIDx662'].selected || choices['HDAULayoutIDx663'].selected || choices['HDAULayoutIDx664'].selected || choices['HDAULayoutIDx885'].selected || choices['HDAULayoutIDx887'].selected || choices['HDAULayoutIDx888'].selected || choices['HDAULayoutIDx889'].selected || choices['HDAULayoutIDx892'].selected || choices['HDAULayoutIDx898'].selected))">
+		<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidxbd7"/>
+	</choice>
+
+	<choice
+		id="HDEFLayout"
+		title="HDEFLayout_title"
+		description="HDEFLayout_description">
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx01"
+		title="HDEFLayoutIDx01_title"
+		description="HDEFLayoutIDx01_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','01000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx01"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx02"
+		title="HDEFLayoutIDx02_title"
+		description="HDEFLayoutIDx02_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','02000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx02"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx03"
+		title="HDEFLayoutIDx03_title"
+		description="HDEFLayoutIDx03_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','03000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx03"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx05"
+		title="HDEFLayoutIDx05_title"
+		description="HDEFLayoutIDx05_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','05000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx05"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx07"
+		title="HDEFLayoutIDx07_title"
+		description="HDEFLayoutIDx07_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','07000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx07"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx12"
+		title="HDEFLayoutIDx12_title"
+		description="HDEFLayoutIDx12_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','0C000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx12"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx32"
+		title="HDEFLayoutIDx32_title"
+		description="HDEFLayoutIDx32_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','20000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx32"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx40"
+		title="HDEFLayoutIDx40_title"
+		description="HDEFLayoutIDx40_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','28000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx40"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx65"
+		title="HDEFLayoutIDx65_title"
+		description="HDEFLayoutIDx65_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','41000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx65"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx99"
+		title="HDEFLayoutIDx99_title"
+		description="HDEFLayoutIDx99_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','63000000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx99"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx269"
+		title="HDEFLayoutIDx269_title"
+		description="HDEFLayoutIDx269_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','0D010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx269"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx387"
+		title="HDEFLayoutIDx387_title"
+		description="HDEFLayoutIDx387_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','83010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx387"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx388"
+		title="HDEFLayoutIDx388_title"
+		description="HDEFLayoutIDx388_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','84010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx388"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx389"
+		title="HDEFLayoutIDx389_title"
+		description="HDEFLayoutIDx389_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','85010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx389"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx392"
+		title="HDEFLayoutIDx392_title"
+		description="HDEFLayoutIDx392_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','88010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx392"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx398"
+		title="HDEFLayoutIDx398_title"
+		description="HDEFLayoutIDx398_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','8E010000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx398"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx662"
+		title="HDEFLayoutIDx662_title"
+		description="HDEFLayoutIDx662_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','96020000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx662"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx663"
+		title="HDEFLayoutIDx663_title"
+		description="HDEFLayoutIDx663_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','97020000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx663"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx664"
+		title="HDEFLayoutIDx664_title"
+		description="HDEFLayoutIDx664_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','98020000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx664"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx885"
+		title="HDEFLayoutIDx885_title"
+		description="HDEFLayoutIDx885_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','75030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx885"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx887"
+		title="HDEFLayoutIDx887_title"
+		description="HDEFLayoutIDx887_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','77030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx887"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx888"
+		title="HDEFLayoutIDx888_title"
+		description="HDEFLayoutIDx888_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','78030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx888"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx889"
+		title="HDEFLayoutIDx889_title"
+		description="HDEFLayoutIDx889_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','79030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx889"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx892"
+		title="HDEFLayoutIDx892_title"
+		description="HDEFLayoutIDx892_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','7C030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx898'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx892"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDx898"
+		title="HDEFLayoutIDx898_title"
+		description="HDEFLayoutIDx898_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','82030000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDxBD7'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx898"/>
+	</choice>
+
+	<choice
+		id="HDEFLayoutIDxBD7"
+		title="HDEFLayoutIDxBD7_title"
+		description="HDEFLayoutIDxBD7_description"
+		start_selected="check_chameleon_text_option('HDEFLayoutID','BD070000')"
+		selected="(my.choice.selected &amp;&amp; !(choices['HDEFLayoutIDx01'].selected || choices['HDEFLayoutIDx02'].selected || choices['HDEFLayoutIDx03'].selected || choices['HDEFLayoutIDx05'].selected || choices['HDEFLayoutIDx07'].selected || choices['HDEFLayoutIDx12'].selected || choices['HDEFLayoutIDx32'].selected || choices['HDEFLayoutIDx40'].selected || choices['HDEFLayoutIDx65'].selected || choices['HDEFLayoutIDx99'].selected || choices['HDEFLayoutIDx269'].selected || choices['HDEFLayoutIDx387'].selected || choices['HDEFLayoutIDx388'].selected || choices['HDEFLayoutIDx389'].selected || choices['HDEFLayoutIDx392'].selected || choices['HDEFLayoutIDx398'].selected || choices['HDEFLayoutIDx662'].selected || choices['HDEFLayoutIDx663'].selected || choices['HDEFLayoutIDx664'].selected || choices['HDEFLayoutIDx885'].selected || choices['HDEFLayoutIDx887'].selected || choices['HDEFLayoutIDx888'].selected || choices['HDEFLayoutIDx889'].selected || choices['HDEFLayoutIDx892'].selected || choices['HDEFLayoutIDx898'].selected))">
+		<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidxbd7"/>
+	</choice>
+
+	<choice
+		id="IntelAzul"
+		title="IntelAzul_title"
+		description="IntelAzul_description">
+	</choice>
+
+	<choice
+		id="IntelAzulx00"
+		title="IntelAzulx00_title"
+		description="IntelAzulx00_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','0')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx00"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx01"
+		title="IntelAzulx01_title"
+		description="IntelAzulx01_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','1')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx01"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx02"
+		title="IntelAzulx02_title"
+		description="IntelAzulx02_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','2')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx02"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx03"
+		title="IntelAzulx03_title"
+		description="IntelAzulx03_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','3')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx03"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx04"
+		title="IntelAzulx04_title"
+		description="IntelAzulx04_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','4')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx04"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx05"
+		title="IntelAzulx05_title"
+		description="IntelAzulx05_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','5')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx05"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx06"
+		title="IntelAzulx06_title"
+		description="IntelAzulx06_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','6')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx06"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx07"
+		title="IntelAzulx07_title"
+		description="IntelAzulx07_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','7')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx07"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx08"
+		title="IntelAzulx08_title"
+		description="IntelAzulx08_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','8')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx08"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx09"
+		title="IntelAzulx09_title"
+		description="IntelAzulx09_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','9')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx09"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx10"
+		title="IntelAzulx10_title"
+		description="IntelAzulx10_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','10')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx10"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx11"
+		title="IntelAzulx11_title"
+		description="IntelAzulx11_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','11')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx11"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx12"
+		title="IntelAzulx12_title"
+		description="IntelAzulx12_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','12')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx12"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx13"
+		title="IntelAzulx13_title"
+		description="IntelAzulx13_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','13')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx14'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx13"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx14"
+		title="IntelAzulx14_title"
+		description="IntelAzulx14_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','14')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx15'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx14"/>
+	</choice>
+
+	<choice
+		id="IntelAzulx15"
+		title="IntelAzulx15_title"
+		description="IntelAzulx15_description"
+		start_selected="check_chameleon_text_option('IntelAzulFB','15')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelAzulx00'].selected || choices['IntelAzulx01'].selected || choices['IntelAzulx02'].selected || choices['IntelAzulx03'].selected || choices['IntelAzulx04'].selected || choices['IntelAzulx05'].selected || choices['IntelAzulx06'].selected || choices['IntelAzulx07'].selected || choices['IntelAzulx08'].selected || choices['IntelAzulx09'].selected || choices['IntelAzulx10'].selected || choices['IntelAzulx11'].selected || choices['IntelAzulx12'].selected || choices['IntelAzulx13'].selected || choices['IntelAzulx14'].selected))">
+		<pkg-ref id="org.chameleon.options.intelazul.intelazulx15"/>
+	</choice>
+
+	<choice
+		id="IntelCapri"
+		title="IntelCapri_title"
+		description="IntelCapri_description">
+	</choice>
+
+	<choice
+		id="IntelCaprix00"
+		title="IntelCaprix00_title"
+		description="IntelCaprix00_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','0')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix00"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix01"
+		title="IntelCaprix01_title"
+		description="IntelCaprix01_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','1')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix01"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix02"
+		title="IntelCaprix02_title"
+		description="IntelCaprix02_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','2')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix02"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix03"
+		title="IntelCaprix03_title"
+		description="IntelCaprix03_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','3')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix03"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix04"
+		title="IntelCaprix04_title"
+		description="IntelCaprix04_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','4')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix04"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix05"
+		title="IntelCaprix05_title"
+		description="IntelCaprix05_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','5')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix05"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix06"
+		title="IntelCaprix06_title"
+		description="IntelCaprix06_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','6')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix06"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix07"
+		title="IntelCaprix07_title"
+		description="IntelCaprix07_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','7')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix07"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix08"
+		title="IntelCaprix08_title"
+		description="IntelCaprix08_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','8')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix08"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix09"
+		title="IntelCaprix09_title"
+		description="IntelCaprix09_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','9')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix10'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix09"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix10"
+		title="IntelCaprix10_title"
+		description="IntelCaprix10_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','10')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix11'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix10"/>
+	</choice>
+
+	<choice
+		id="IntelCaprix11"
+		title="IntelCaprix11_title"
+		description="IntelCaprix11_description"
+		start_selected="check_chameleon_text_option('IntelCapriFB','11')"
+		selected="(my.choice.selected &amp;&amp; !(choices['IntelCaprix00'].selected || choices['IntelCaprix01'].selected || choices['IntelCaprix02'].selected || choices['IntelCaprix03'].selected || choices['IntelCaprix04'].selected || choices['IntelCaprix05'].selected || choices['IntelCaprix06'].selected || choices['IntelCaprix07'].selected || choices['IntelCaprix08'].selected || choices['IntelCaprix09'].selected || choices['IntelCaprix10'].selected))">
+		<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix11"/>
+	</choice>
+
+	<choice
+		id="KernelFlags"
+		title="KernelFlags_title"
+		description="KernelFlags_description">
+	</choice>
+
+	<choice
+		id="Verbose"
+		title="Verbose_title"
+		description="Verbose_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','-v')">
+		<pkg-ref id="org.chameleon.options.kernelflags.verbose"/>
+	</choice>
+
+	<choice
+		id="Singleusermode"
+		title="Singleusermode_title"
+		description="Singleusermode_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','-s')">
+		<pkg-ref id="org.chameleon.options.kernelflags.singleusermode"/>
+	</choice>
+
+	<choice
+		id="Ignorecaches"
+		title="Ignorecaches_title"
+		description="Ignorecaches_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','-f')">
+		<pkg-ref id="org.chameleon.options.kernelflags.ignorecaches"/>
+	</choice>
+
+	<choice
+		id="Npci"
+		title="Npci_title"
+		description="Npci_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','npci=0x2000')">
+		<pkg-ref id="org.chameleon.options.kernelflags.npci"/>
+	</choice>
+
+	<choice
+		id="Npci3"
+		title="Npci3_title"
+		description="Npci3_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','npci=0x3000')">
+		<pkg-ref id="org.chameleon.options.kernelflags.npci3"/>
+	</choice>
+
+	<choice
+		id="WaitingRootDevice"
+		title="WaitingRootDevice_title"
+		description="WaitingRootDevice_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','ahcidisk=1 debug=8')">
+		<pkg-ref id="org.chameleon.options.kernelflags.waitingrootdevice"/>
+	</choice>
+
+	<choice
+		id="Darkwake"
+		title="Darkwake_title"
+		description="Darkwake_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','darkwake=0')">
+		<pkg-ref id="org.chameleon.options.kernelflags.darkwake"/>
+	</choice>
+
+	<choice
+		id="NvdaDrv1"
+		title="NvdaDrv1_title"
+		description="NvdaDrv1_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','nvda_drv=1')">
+		<pkg-ref id="org.chameleon.options.kernelflags.nvdadrv1"/>
+	</choice>
+
+	<choice
+		id="kext-dev-mode1"
+		title="kext-dev-mode1_title"
+		description="kext-dev-mode1_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','kext-dev-mode=1')">
+		<pkg-ref id="org.chameleon.options.kernelflags.kext-dev-mode1"/>
+	</choice>
+
+	<choice
+		id="Dart0"
+		title="Dart0_title"
+		description="Dart0_description"
+		start_selected="check_chameleon_list_option('Kernel Flags','dart=0')">
+		<pkg-ref id="org.chameleon.options.kernelflags.dart0"/>
+	</choice>
+
+	<choice
+		id="PowerManagement"
+		title="PowerManagement_title"
+		description="PowerManagement_description">
+	</choice>
+
+	<choice
+		id="CSTUsingSystemIO"
+		title="CSTUsingSystemIO_title"
+		description="CSTUsingSystemIO_description"
+		start_selected="check_chameleon_bool_option('CSTUsingSystemIO','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.cstusingsystemio"/>
+	</choice>
+
+	<choice
+		id="DropSSDT"
+		title="DropSSDT_title"
+		description="DropSSDT_description"
+		start_selected="check_chameleon_bool_option('DropSSDT','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.dropssdt"/>
+	</choice>
+
+	<choice
+		id="DropHPET"
+		title="DropHPET_title"
+		description="DropHPET_description"
+		start_selected="check_chameleon_bool_option('DropHPET','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.drophpet"/>
+	</choice>
+
+	<choice
+		id="DropSBST"
+		title="DropSBST_title"
+		description="DropSBST_description"
+		start_selected="check_chameleon_bool_option('DropSBST','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.dropsbst"/>
+	</choice>
+
+	<choice
+		id="DropECDT"
+		title="DropECDT_title"
+		description="DropECDT_description"
+		start_selected="check_chameleon_bool_option('DropECDT','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.dropecdt"/>
+	</choice>
+
+	<choice
+		id="DropASFT"
+		title="DropASFT_title"
+		description="DropASFT_description"
+		start_selected="check_chameleon_bool_option('DropASFT','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.dropasft"/>
+	</choice>
+
+	<choice
+		id="DropDMAR"
+		title="DropDMAR_title"
+		description="DropDMAR_description"
+		start_selected="check_chameleon_bool_option('DropDMAR','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.dropdmar"/>
+	</choice>
+
+	<choice
+		id="EnableC2State"
+		title="EnableC2State_title"
+		description="EnableC2State_description"
+		start_selected="check_chameleon_bool_option('EnableC2State','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.enablec2state"/>
+	</choice>
+
+	<choice
+		id="EnableC3State"
+		title="EnableC3State_title"
+		description="EnableC3State_description"
+		start_selected="check_chameleon_bool_option('EnableC3State','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.enablec3state"/>
+	</choice>
+
+	<choice
+		id="EnableC4State"
+		title="EnableC4State_title"
+		description="EnableC4State_description"
+		start_selected="check_chameleon_bool_option('EnableC4State','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.enablec4state"/>
+	</choice>
+
+	<choice
+		id="EnableC6State"
+		title="EnableC6State_title"
+		description="EnableC6State_description"
+		start_selected="check_chameleon_bool_option('EnableC6State','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.enablec6state"/>
+	</choice>
+
+	<choice
+		id="EnableC7State"
+		title="EnableC7State_title"
+		description="EnableC7State_description"
+		start_selected="check_chameleon_bool_option('EnableC7State','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.enablec7state"/>
+	</choice>
+
+	<choice
+		id="GenerateCStates"
+		title="GenerateCStates_title"
+		description="GenerateCStates_description"
+		start_selected="check_chameleon_bool_option('GenerateCStates','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.generatecstates"/>
+	</choice>
+
+	<choice
+		id="GeneratePStates"
+		title="GeneratePStates_title"
+		description="GeneratePStates_description"
+		start_selected="check_chameleon_bool_option('GeneratePStates','Yes')">
+		<pkg-ref id="org.chameleon.options.powermanagement.generatepstates"/>
+	</choice>
+
+	<choice
+		id="Resolution"
+		title="Resolution_title"
+		description="Resolution_description">
+	</choice>
+
+	<choice
+		id="1024x600x32"
+		title="1024x600x32_title"
+		description="1024x600x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1024x600x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1024x600x32"/>
+	</choice>
+
+	<choice
+		id="1024x768x32"
+		title="1024x768x32_title"
+		description="1024x768x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1024x768x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1024x768x32"/>
+	</choice>
+
+	<choice
+		id="1280x768x32"
+		title="1280x768x32_title"
+		description="1280x768x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1280x768x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1280x768x32"/>
+	</choice>
+
+	<choice
+		id="1280x800x32"
+		title="1280x800x32_title"
+		description="1280x800x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1280x800x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1280x800x32"/>
+	</choice>
+
+	<choice
+		id="1280x960x32"
+		title="1280x960x32_title"
+		description="1280x960x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1280x960x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1280x960x32"/>
+	</choice>
+
+	<choice
+		id="1280x1024x32"
+		title="1280x1024x32_title"
+		description="1280x1024x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1280x1024x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1280x1024x32"/>
+	</choice>
+
+	<choice
+		id="1366x768x32"
+		title="1366x768x32_title"
+		description="1366x768x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1366x768x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1366x768x32"/>
+	</choice>
+
+	<choice
+		id="1440x900x32"
+		title="1440x900x32_title"
+		description="1440x900x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1440x900x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1440x900x32"/>
+	</choice>
+
+	<choice
+		id="1600x900x32"
+		title="1600x900x32_title"
+		description="1600x900x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1600x900x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1600x900x32"/>
+	</choice>
+
+	<choice
+		id="1600x1200x32"
+		title="1600x1200x32_title"
+		description="1600x1200x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1600x1200x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1600x1200x32"/>
+	</choice>
+
+	<choice
+		id="1680x1050x32"
+		title="1680x1050x32_title"
+		description="1680x1050x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1680x1050x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1920x1080x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1680x1050x32"/>
+	</choice>
+
+	<choice
+		id="1920x1080x32"
+		title="1920x1080x32_title"
+		description="1920x1080x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1920x1080x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1200x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1920x1080x32"/>
+	</choice>
+
+	<choice
+		id="1920x1200x32"
+		title="1920x1200x32_title"
+		description="1920x1200x32_description"
+		start_selected="check_chameleon_text_option('Graphics Mode','1920x1200x32')"
+		selected="(my.choice.selected &amp;&amp; !(choices['1024x600x32'].selected || choices['1024x768x32'].selected || choices['1280x768x32'].selected || choices['1280x800x32'].selected || choices['1280x960x32'].selected || choices['1280x1024x32'].selected || choices['1366x768x32'].selected || choices['1440x900x32'].selected || choices['1600x900x32'].selected || choices['1600x1200x32'].selected || choices['1680x1050x32'].selected || choices['1920x1080x32'].selected))">
+		<pkg-ref id="org.chameleon.options.resolution.1920x1200x32"/>
+	</choice>
+
+	<choice
+		id="Video"
+		title="Video_title"
+		description="Video_description">
+	</choice>
+
+	<choice
+		id="GraphicsEnabler"
+		title="GraphicsEnabler_title"
+		description="GraphicsEnabler_description"
+		start_selected="check_chameleon_bool_option('GraphicsEnabler','Yes')">
+		<pkg-ref id="org.chameleon.options.video.graphicsenabler"/>
+	</choice>
+
+	<choice
+		id="UseAtiROM"
+		title="UseAtiROM_title"
+		description="UseAtiROM_description"
+		start_selected="check_chameleon_bool_option('UseAtiROM','Yes')">
+		<pkg-ref id="org.chameleon.options.video.useatirom"/>
+	</choice>
+
+	<choice
+		id="UseNvidiaROM"
+		title="UseNvidiaROM_title"
+		description="UseNvidiaROM_description"
+		start_selected="check_chameleon_bool_option('UseNvidiaROM','Yes')">
+		<pkg-ref id="org.chameleon.options.video.usenvidiarom"/>
+	</choice>
+
+	<choice
+		id="VBIOS"
+		title="VBIOS_title"
+		description="VBIOS_description"
+		start_selected="check_chameleon_bool_option('VBIOS','Yes')">
+		<pkg-ref id="org.chameleon.options.video.vbios"/>
+	</choice>
+
+	<choice
+		id="SkipIntelGfx"
+		title="SkipIntelGfx_title"
+		description="SkipIntelGfx_description"
+		start_selected="check_chameleon_bool_option('SkipIntelGfx','Yes')">
+		<pkg-ref id="org.chameleon.options.video.skipintelgfx"/>
+	</choice>
+
+	<choice
+		id="SkipNvidiaGfx"
+		title="SkipNvidiaGfx_title"
+		description="SkipNvidiaGfx_description"
+		start_selected="check_chameleon_bool_option('SkipNvidiaGfx','Yes')">
+		<pkg-ref id="org.chameleon.options.video.skipnvidiagfx"/>
+	</choice>
+
+	<choice
+		id="SkipAtiGfx"
+		title="SkipAtiGfx_title"
+		description="SkipAtiGfx_description"
+		start_selected="check_chameleon_bool_option('SkipAtiGfx','Yes')">
+		<pkg-ref id="org.chameleon.options.video.skipatigfx"/>
+	</choice>
+
+	<choice
+		id="EnableBacklight"
+		title="EnableBacklight_title"
+		description="EnableBacklight_description"
+		start_selected="check_chameleon_bool_option('EnableBacklight','Yes')">
+		<pkg-ref id="org.chameleon.options.video.enablebacklight"/>
+	</choice>
+
+	<choice
+		id="EnableDualLink"
+		title="EnableDualLink_title"
+		description="EnableDualLink_description"
+		start_selected="check_chameleon_bool_option('EnableDualLink','Yes')">
+		<pkg-ref id="org.chameleon.options.video.enableduallink"/>
+	</choice>
+
+	<choice
+		id="NvidiaGeneric"
+		title="NvidiaGeneric_title"
+		description="NvidiaGeneric_description"
+		start_selected="check_chameleon_bool_option('NvidiaGeneric','Yes')">
+		<pkg-ref id="org.chameleon.options.video.nvidiageneric"/>
+	</choice>
+
+	<choice
+		id="Keymaps"
+		title="Keymaps_title"
+		description="Keymaps_description">
+	</choice>
+
+	<choice
+		id="mac-de"
+		title="mac-de_title"
+		description="mac-de_description"
+		start_selected="check_chameleon_text_option('KeyLayout','mac-de')"
+		selected="(my.choice.selected &amp;&amp; !(choices['mac-es'].selected || choices['mac-fr'].selected || choices['mac-it'].selected || choices['mac-se'].selected || choices['pc-fr'].selected))">
+		<pkg-ref id="org.chameleon.options.keymaps.mac-de"/>
+	</choice>
+
+	<choice
+		id="mac-es"
+		title="mac-es_title"
+		description="mac-es_description"
+		start_selected="check_chameleon_text_option('KeyLayout','mac-es')"
+		selected="(my.choice.selected &amp;&amp; !(choices['mac-de'].selected || choices['mac-fr'].selected || choices['mac-it'].selected || choices['mac-se'].selected || choices['pc-fr'].selected))">
+		<pkg-ref id="org.chameleon.options.keymaps.mac-es"/>
+	</choice>
+
+	<choice
+		id="mac-fr"
+		title="mac-fr_title"
+		description="mac-fr_description"
+		start_selected="check_chameleon_text_option('KeyLayout','mac-fr')"
+		selected="(my.choice.selected &amp;&amp; !(choices['mac-de'].selected || choices['mac-es'].selected || choices['mac-it'].selected || choices['mac-se'].selected || choices['pc-fr'].selected))">
+		<pkg-ref id="org.chameleon.options.keymaps.mac-fr"/>
+	</choice>
+
+	<choice
+		id="mac-it"
+		title="mac-it_title"
+		description="mac-it_description"
+		start_selected="check_chameleon_text_option('KeyLayout','mac-it')"
+		selected="(my.choice.selected &amp;&amp; !(choices['mac-de'].selected || choices['mac-es'].selected || choices['mac-fr'].selected || choices['mac-se'].selected || choices['pc-fr'].selected))">
+		<pkg-ref id="org.chameleon.options.keymaps.mac-it"/>
+	</choice>
+
+	<choice
+		id="mac-se"
+		title="mac-se_title"
+		description="mac-se_description"
+		start_selected="check_chameleon_text_option('KeyLayout','mac-se')"
+		selected="(my.choice.selected &amp;&amp; !(choices['mac-de'].selected || choices['mac-es'].selected || choices['mac-fr'].selected || choices['mac-it'].selected || choices['pc-fr'].selected))">
+		<pkg-ref id="org.chameleon.options.keymaps.mac-se"/>
+	</choice>
+
+	<choice
+		id="pc-fr"
+		title="pc-fr_title"
+		description="pc-fr_description"
+		start_selected="check_chameleon_text_option('KeyLayout','pc-fr')"
+		selected="(my.choice.selected &amp;&amp; !(choices['mac-de'].selected || choices['mac-es'].selected || choices['mac-fr'].selected || choices['mac-it'].selected || choices['mac-se'].selected))">
+		<pkg-ref id="org.chameleon.options.keymaps.pc-fr"/>
+	</choice>
+
+	<choice
+		id="Themes"
+		title="Themes_title"
+		description="Themes_description">
+	</choice>
+
+	<choice
+		id="Default"
+		title="Default_title"
+		description="Default_description"
+		start_selected="false">
+		<pkg-ref id="org.chameleon.themes.default"/>
+	</choice>
+
+	<choice
+		id="Post"
+		title="Post_title"
+		description="Post_description"
+		start_visible="false" start_selected="true">
+		<pkg-ref id="org.chameleon.post"/>
+	</choice>
+
+	<pkg-ref id="org.chameleon.core" installKBytes='1100' version='2.3svn.0.0.1417993862'>#Core.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.standard" installKBytes='0' version='2.3svn.0.0.1417993862'>#Standard.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.noboot" installKBytes='0' version='2.3svn.0.0.1417993862'>#noboot.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.audio.useintelhdmi" installKBytes='0' version='2.3svn.0.0.1417993862'>#UseIntelHDMI.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.audio.enablehdmiaudio" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableHDMIAudio.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.control.bootbanner" installKBytes='0' version='2.3svn.0.0.1417993862'>#BootBanner.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.control.gui" installKBytes='0' version='2.3svn.0.0.1417993862'>#GUI.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.control.legacylogo" installKBytes='0' version='2.3svn.0.0.1417993862'>#LegacyLogo.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.control.instantmenu" installKBytes='0' version='2.3svn.0.0.1417993862'>#InstantMenu.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.control.quietboot" installKBytes='0' version='2.3svn.0.0.1417993862'>#QuietBoot.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.control.showinfo" installKBytes='0' version='2.3svn.0.0.1417993862'>#ShowInfo.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.control.wait" installKBytes='0' version='2.3svn.0.0.1417993862'>#Wait.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.arch" installKBytes='0' version='2.3svn.0.0.1417993862'>#arch.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.ehciacquire" installKBytes='0' version='2.3svn.0.0.1417993862'>#EHCIacquire.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.ethernetbuiltin" installKBytes='0' version='2.3svn.0.0.1417993862'>#EthernetBuiltIn.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.enablewifi" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableWifi.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.forcehpet" installKBytes='0' version='2.3svn.0.0.1417993862'>#ForceHPET.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.forcewake" installKBytes='0' version='2.3svn.0.0.1417993862'>#ForceWake.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.forcefullmeminfo" installKBytes='0' version='2.3svn.0.0.1417993862'>#ForceFullMemInfo.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.restartfix" installKBytes='0' version='2.3svn.0.0.1417993862'>#RestartFix.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.uhcireset" installKBytes='0' version='2.3svn.0.0.1417993862'>#UHCIreset.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.usememdetect" installKBytes='0' version='2.3svn.0.0.1417993862'>#UseMemDetect.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.usekernelcache" installKBytes='0' version='2.3svn.0.0.1417993862'>#UseKernelCache.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.wake" installKBytes='0' version='2.3svn.0.0.1417993862'>#Wake.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.general.privatedata" installKBytes='0' version='2.3svn.0.0.1417993862'>#PrivateData.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx01" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx01.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx02" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx02.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx03" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx03.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx05" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx05.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx07" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx07.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx12" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx12.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx32" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx40" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx40.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx65" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx65.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx99" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx99.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx269" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx269.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx387" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx387.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx388" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx388.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx389" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx389.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx392" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx392.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx398" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx398.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx662" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx662.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx663" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx663.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx664" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx664.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx885" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx885.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx887" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx887.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx888" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx888.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx889" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx889.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx892" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx892.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidx898" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDx898.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdaulayout.hdaulayoutidxbd7" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDAULayoutIDxBD7.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx01" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx01.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx02" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx02.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx03" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx03.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx05" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx05.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx07" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx07.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx12" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx12.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx32" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx40" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx40.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx65" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx65.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx99" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx99.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx269" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx269.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx387" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx387.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx388" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx388.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx389" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx389.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx392" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx392.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx398" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx398.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx662" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx662.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx663" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx663.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx664" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx664.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx885" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx885.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx887" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx887.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx888" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx888.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx889" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx889.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx892" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx892.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidx898" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDx898.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.hdeflayout.hdeflayoutidxbd7" installKBytes='0' version='2.3svn.0.0.1417993862'>#HDEFLayoutIDxBD7.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx00" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx00.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx01" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx01.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx02" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx02.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx03" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx03.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx04" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx04.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx05" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx05.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx06" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx06.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx07" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx07.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx08" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx08.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx09" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx09.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx10" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx10.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx11" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx11.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx12" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx12.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx13" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx13.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx14" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx14.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelazul.intelazulx15" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelAzulx15.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix00" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix00.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix01" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix01.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix02" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix02.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix03" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix03.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix04" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix04.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix05" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix05.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix06" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix06.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix07" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix07.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix08" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix08.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix09" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix09.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix10" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix10.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.intelcapri.intelcaprix11" installKBytes='0' version='2.3svn.0.0.1417993862'>#IntelCaprix11.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.verbose" installKBytes='0' version='2.3svn.0.0.1417993862'>#Verbose.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.singleusermode" installKBytes='0' version='2.3svn.0.0.1417993862'>#Singleusermode.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.ignorecaches" installKBytes='0' version='2.3svn.0.0.1417993862'>#Ignorecaches.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.npci" installKBytes='0' version='2.3svn.0.0.1417993862'>#Npci.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.npci3" installKBytes='0' version='2.3svn.0.0.1417993862'>#Npci3.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.waitingrootdevice" installKBytes='0' version='2.3svn.0.0.1417993862'>#WaitingRootDevice.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.darkwake" installKBytes='0' version='2.3svn.0.0.1417993862'>#Darkwake.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.nvdadrv1" installKBytes='0' version='2.3svn.0.0.1417993862'>#NvdaDrv1.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.kext-dev-mode1" installKBytes='0' version='2.3svn.0.0.1417993862'>#kext-dev-mode1.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.kernelflags.dart0" installKBytes='0' version='2.3svn.0.0.1417993862'>#Dart0.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.cstusingsystemio" installKBytes='0' version='2.3svn.0.0.1417993862'>#CSTUsingSystemIO.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.dropssdt" installKBytes='0' version='2.3svn.0.0.1417993862'>#DropSSDT.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.drophpet" installKBytes='0' version='2.3svn.0.0.1417993862'>#DropHPET.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.dropsbst" installKBytes='0' version='2.3svn.0.0.1417993862'>#DropSBST.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.dropecdt" installKBytes='0' version='2.3svn.0.0.1417993862'>#DropECDT.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.dropasft" installKBytes='0' version='2.3svn.0.0.1417993862'>#DropASFT.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.dropdmar" installKBytes='0' version='2.3svn.0.0.1417993862'>#DropDMAR.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.enablec2state" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableC2State.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.enablec3state" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableC3State.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.enablec4state" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableC4State.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.enablec6state" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableC6State.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.enablec7state" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableC7State.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.generatecstates" installKBytes='0' version='2.3svn.0.0.1417993862'>#GenerateCStates.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.powermanagement.generatepstates" installKBytes='0' version='2.3svn.0.0.1417993862'>#GeneratePStates.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1024x600x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1024x600x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1024x768x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1024x768x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1280x768x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1280x768x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1280x800x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1280x800x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1280x960x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1280x960x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1280x1024x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1280x1024x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1366x768x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1366x768x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1440x900x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1440x900x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1600x900x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1600x900x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1600x1200x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1600x1200x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1680x1050x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1680x1050x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1920x1080x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1920x1080x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.resolution.1920x1200x32" installKBytes='0' version='2.3svn.0.0.1417993862'>#1920x1200x32.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.graphicsenabler" installKBytes='0' version='2.3svn.0.0.1417993862'>#GraphicsEnabler.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.useatirom" installKBytes='0' version='2.3svn.0.0.1417993862'>#UseAtiROM.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.usenvidiarom" installKBytes='0' version='2.3svn.0.0.1417993862'>#UseNvidiaROM.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.vbios" installKBytes='0' version='2.3svn.0.0.1417993862'>#VBIOS.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.skipintelgfx" installKBytes='0' version='2.3svn.0.0.1417993862'>#SkipIntelGfx.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.skipnvidiagfx" installKBytes='0' version='2.3svn.0.0.1417993862'>#SkipNvidiaGfx.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.skipatigfx" installKBytes='0' version='2.3svn.0.0.1417993862'>#SkipAtiGfx.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.enablebacklight" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableBacklight.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.enableduallink" installKBytes='0' version='2.3svn.0.0.1417993862'>#EnableDualLink.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.video.nvidiageneric" installKBytes='0' version='2.3svn.0.0.1417993862'>#NvidiaGeneric.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.keymaps.mac-de" installKBytes='0' version='2.3svn.0.0.1417993862'>#mac-de.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.keymaps.mac-es" installKBytes='0' version='2.3svn.0.0.1417993862'>#mac-es.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.keymaps.mac-fr" installKBytes='0' version='2.3svn.0.0.1417993862'>#mac-fr.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.keymaps.mac-it" installKBytes='0' version='2.3svn.0.0.1417993862'>#mac-it.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.keymaps.mac-se" installKBytes='0' version='2.3svn.0.0.1417993862'>#mac-se.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.options.keymaps.pc-fr" installKBytes='0' version='2.3svn.0.0.1417993862'>#pc-fr.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.themes.default" installKBytes='1928' version='2.3svn.0.0.1417993862'>#Default.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.pre" installKBytes='0' version='2.3svn.0.0.1417993862'>#Pre.pkg</pkg-ref>
+	<pkg-ref id="org.chameleon.post" installKBytes='0' version='2.3svn.0.0.1417993862'>#Post.pkg</pkg-ref>
+
+</installer-gui-script>

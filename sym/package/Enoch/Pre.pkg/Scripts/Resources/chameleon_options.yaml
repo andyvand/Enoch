@@ -1,0 +1,226 @@
+---
+UseIntelHDMI:
+  type: bool
+EnableHDMIAudio:
+  type: bool
+Boot Banner:
+  type: bool
+GUI:
+  type: bool
+Legacy Logo:
+  type: bool
+Instant Menu:
+  type: bool
+QuietBoot:
+  type: bool
+ShowInfo:
+  type: bool
+Wait:
+  type: bool
+arch:
+  type: text
+  values:
+    - i386
+EHCIacquire:
+  type: bool
+EthernetBuiltIn:
+  type: bool
+EnableWifi:
+  type: bool
+ForceHPET:
+  type: bool
+ForceWake:
+  type: bool
+ForceFullMemInfo:
+  type: bool
+RestartFix:
+  type: bool
+UHCIreset:
+  type: bool
+UseMemDetect:
+  type: bool
+UseKernelCache:
+  type: bool
+Wake:
+  type: bool
+PrivateData:
+  type: bool
+HDAULayoutID:
+  type: text
+  values:
+    - 01000000
+    - 02000000
+    - 03000000
+    - 05000000
+    - 07000000
+    - 0C000000
+    - 20000000
+    - 28000000
+    - 41000000
+    - 63000000
+    - 0D010000
+    - 83010000
+    - 84010000
+    - 85010000
+    - 88010000
+    - 8E010000
+    - 96020000
+    - 97020000
+    - 98020000
+    - 75030000
+    - 77030000
+    - 78030000
+    - 79030000
+    - 7C030000
+    - 82030000
+    - BD070000
+HDEFLayoutID:
+  type: text
+  values:
+    - 01000000
+    - 02000000
+    - 03000000
+    - 05000000
+    - 07000000
+    - 0C000000
+    - 20000000
+    - 28000000
+    - 41000000
+    - 63000000
+    - 0D010000
+    - 83010000
+    - 84010000
+    - 85010000
+    - 88010000
+    - 8E010000
+    - 96020000
+    - 97020000
+    - 98020000
+    - 75030000
+    - 77030000
+    - 78030000
+    - 79030000
+    - 7C030000
+    - 82030000
+    - BD070000
+IntelAzulFB:
+  type: text
+  values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+IntelCapriFB:
+  type: text
+  values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+Kernel Flags:
+  type: list
+  values:
+    - -v
+    - -s
+    - -f
+    - npci=0x2000
+    - npci=0x3000
+    - ahcidisk=1
+    - debug=8
+    - darkwake=0
+    - nvda_drv=1
+    - kext-dev-mode=1
+    - dart=0
+CSTUsingSystemIO:
+  type: bool
+DropSSDT:
+  type: bool
+DropHPET:
+  type: bool
+DropSBST:
+  type: bool
+DropECDT:
+  type: bool
+DropASFT:
+  type: bool
+DropDMAR:
+  type: bool
+EnableC2State:
+  type: bool
+EnableC3State:
+  type: bool
+EnableC4State:
+  type: bool
+EnableC6State:
+  type: bool
+EnableC7State:
+  type: bool
+GenerateCStates:
+  type: bool
+GeneratePStates:
+  type: bool
+Graphics Mode:
+  type: text
+  values:
+    - 1024x600x32
+    - 1024x768x32
+    - 1280x768x32
+    - 1280x800x32
+    - 1280x960x32
+    - 1280x1024x32
+    - 1366x768x32
+    - 1440x900x32
+    - 1600x900x32
+    - 1600x1200x32
+    - 1680x1050x32
+    - 1920x1080x32
+    - 1920x1200x32
+GraphicsEnabler:
+  type: bool
+UseAtiROM:
+  type: bool
+UseNvidiaROM:
+  type: bool
+VBIOS:
+  type: bool
+SkipIntelGfx:
+  type: bool
+SkipNvidiaGfx:
+  type: bool
+SkipAtiGfx:
+  type: bool
+EnableBacklight:
+  type: bool
+EnableDualLink:
+  type: bool
+NvidiaGeneric:
+  type: bool
+KeyLayout:
+  type: text
+  values:
+    - mac-de
+    - mac-es
+    - mac-fr
+    - mac-it
+    - mac-se
+    - pc-fr

@@ -1,0 +1,10 @@
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/klibc/strlcpy.o: \
+  strlcpy.c \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/klibc/compiler.h

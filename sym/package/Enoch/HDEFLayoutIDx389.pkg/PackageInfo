@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<pkg-info format-version="2" identifier="org.chameleon.options.hdeflayout.hdeflayoutidx389" version="2.3svn" install-location="/" auth="root">
+	<payload installKBytes="0" numberOfFiles="1"/>
+	<scripts>
+		<postinstall file="./postinstall"/>
+	</scripts>
+</pkg-info>

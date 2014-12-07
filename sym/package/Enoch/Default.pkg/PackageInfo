@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<pkg-info format-version="2" identifier="org.chameleon.themes.default" version="2.3svn" install-location="/Extra/Themes" auth="root">
+	<payload installKBytes="1928" numberOfFiles="81"/>
+	<scripts>
+		<postinstall file="./postinstall"/>
+	</scripts>
+</pkg-info>

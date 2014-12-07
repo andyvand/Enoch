@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<pkg-info format-version="2" identifier="org.chameleon.pre" version="2.3svn" install-location="/" auth="root">
+	<payload installKBytes="0" numberOfFiles="1"/>
+	<scripts>
+		<preinstall file="./preinstall"/>
+	</scripts>
+</pkg-info>

@@ -1,0 +1,1447 @@
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/uClibc++.o: \
+  uClibc++.c \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/libsaio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/libsa.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach-o/loader.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdint.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_prot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/_structs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/message.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/port.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/fp_reg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/eflags.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/architecture/byte_order.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdarg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdbool.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/memory.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/io_inline.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/reboot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/syslimits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bios.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bootargs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/nbp_cmd.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOReturn.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/error.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/device/device_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/std_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/mach_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_statistics.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/time_value.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_notify.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/memory_object_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_sync.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/exception_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/clock_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_attributes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_inherit.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_purgable.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_behavior.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_region.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kmod.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_internal.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/abi.o: \
+  abi.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/basic_definitions include/system_configuration.h \
+  include/typeinfo include/exception
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/algorithm.o: \
+  algorithm.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/algorithm include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/basic_definitions include/system_configuration.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/exception include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/functional
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/associative_base.o: \
+  associative_base.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/associative_base include/memory include/new \
+  include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  include/functional include/list include/algorithm
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/bitset.o: \
+  bitset.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/bitset include/basic_definitions \
+  include/system_configuration.h include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/climits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/syslimits.h \
+  include/func_exception include/exception include/string \
+  include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/memory include/new include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/vector include/iterator include/iosfwd include/algorithm \
+  include/functional include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/complex.o: \
+  complex.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/complex include/istream include/ios include/basic_definitions \
+  include/system_configuration.h include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/locale include/string include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/exception include/memory include/new include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/func_exception include/vector include/iterator include/iosfwd \
+  include/algorithm include/functional include/type_traits \
+  include/cctype \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/ctype.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/runetype.h \
+  include/streambuf include/istream_helpers include/ostream \
+  include/ostream_helpers
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/del_op.o: \
+  del_op.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/func_exception
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/del_opnt.o: \
+  del_opnt.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/func_exception
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/del_opv.o: \
+  del_opv.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/func_exception
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/del_opvnt.o: \
+  del_opvnt.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/func_exception
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/deque.o: \
+  deque.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/deque include/memory include/new include/basic_definitions \
+  include/system_configuration.h include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  include/stdexcept include/string include/func_exception include/vector \
+  include/algorithm include/functional include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/eh_alloc.o: \
+  eh_alloc.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/basic_definitions include/system_configuration.h \
+  include/cstring include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/func_exception include/exception include/unwind-cxx.h \
+  include/typeinfo
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/eh_globals.o: \
+  eh_globals.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/basic_definitions include/system_configuration.h \
+  include/cstring include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/func_exception include/exception include/unwind-cxx.h \
+  include/typeinfo
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/exception.o: \
+  exception.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/exception include/basic_definitions \
+  include/system_configuration.h include/func_exception \
+  include/stdexcept include/string include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/vector include/iterator include/iosfwd include/algorithm \
+  include/functional include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/func_exception.o: \
+  func_exception.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/exception include/basic_definitions \
+  include/system_configuration.h include/func_exception \
+  include/stdexcept include/string include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/vector include/iterator include/iosfwd include/algorithm \
+  include/functional include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/iomanip.o: \
+  iomanip.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/iomanip include/exception include/basic_definitions \
+  include/system_configuration.h include/ios include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/locale include/string include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/memory include/new include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/func_exception include/vector include/iterator include/iosfwd \
+  include/algorithm include/functional include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/char_traits.o: \
+  char_traits.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/basic_definitions include/system_configuration.h \
+  include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/exception include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/iterator.o: \
+  iterator.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/iterator include/basic_definitions \
+  include/system_configuration.h include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/exception include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/limits.o: \
+  limits.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/limits include/climits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/syslimits.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/list.o: \
+  list.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/list include/memory include/new include/basic_definitions \
+  include/system_configuration.h include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  include/algorithm include/functional
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/locale.o: \
+  locale.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/locale include/basic_definitions \
+  include/system_configuration.h include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/string include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/exception include/memory include/new include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/func_exception include/vector include/iterator include/iosfwd \
+  include/algorithm include/functional include/type_traits \
+  include/cstring include/stdexcept include/cctype \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/ctype.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/runetype.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/map.o: \
+  map.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/map include/memory include/new include/basic_definitions \
+  include/system_configuration.h include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  include/deque include/stdexcept include/string include/func_exception \
+  include/vector include/algorithm include/functional \
+  include/type_traits include/associative_base include/list
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/new_handler.o: \
+  new_handler.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/new_op.o: \
+  new_op.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/func_exception \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/libsaio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/libsa.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach-o/loader.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdint.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_prot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/_structs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/message.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/port.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/fp_reg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/eflags.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/architecture/byte_order.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdarg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdbool.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/memory.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/io_inline.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/reboot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/syslimits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bios.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bootargs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/nbp_cmd.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOReturn.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/error.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/device/device_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/std_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/mach_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_statistics.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/time_value.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_notify.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/memory_object_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_sync.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/exception_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/clock_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_attributes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_inherit.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_purgable.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_behavior.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_region.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kmod.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_internal.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/new_opnt.o: \
+  new_opnt.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/func_exception \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/libsaio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/libsa.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach-o/loader.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdint.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_prot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/_structs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/message.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/port.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/fp_reg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/eflags.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/architecture/byte_order.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdarg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdbool.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/memory.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/io_inline.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/reboot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/syslimits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bios.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bootargs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/nbp_cmd.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOReturn.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/error.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/device/device_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/std_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/mach_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_statistics.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/time_value.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_notify.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/memory_object_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_sync.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/exception_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/clock_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_attributes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_inherit.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_purgable.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_behavior.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_region.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kmod.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_internal.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/new_opv.o: \
+  new_opv.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/func_exception \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/libsaio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/libsa.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach-o/loader.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdint.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_prot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/_structs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/message.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/port.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/fp_reg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/eflags.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/architecture/byte_order.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdarg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdbool.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/memory.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/io_inline.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/reboot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/syslimits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bios.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bootargs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/nbp_cmd.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOReturn.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/error.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/device/device_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/std_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/mach_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_statistics.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/time_value.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_notify.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/memory_object_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_sync.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/exception_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/clock_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_attributes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_inherit.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_purgable.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_behavior.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_region.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kmod.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_internal.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/new_opvnt.o: \
+  new_opvnt.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/new include/basic_definitions include/system_configuration.h \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/func_exception \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/libsaio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/libsa.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach-o/loader.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdint.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/boolean.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_prot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/_structs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/message.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/port.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/kern_return.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/fp_reg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/eflags.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/architecture/byte_order.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdarg.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdbool.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsa/memory.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/io_inline.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/reboot.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/syslimits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_limits.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bios.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/bootargs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/nbp_cmd.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/IOKit/IOReturn.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/error.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/OSTypes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/device/device_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/std_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/mach_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_statistics.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/time_value.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_notify.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/host_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/memory_object_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_sync.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/exception_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/exception.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_status.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/thread_state.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/i386/processor_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/task_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_info.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_policy.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/thread_special_ports.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/clock_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_attributes.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_inherit.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_purgable.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_behavior.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/vm_region.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/machine/vm_param.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/mach/kmod.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/libsaio/saio_internal.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/numeric.o: \
+  numeric.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/numeric include/basic_definitions \
+  include/system_configuration.h include/exception
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/queue.o: \
+  queue.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/queue include/basic_definitions include/system_configuration.h \
+  include/deque include/memory include/new include/exception \
+  include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  include/stdexcept include/string include/func_exception include/vector \
+  include/algorithm include/functional include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/set.o: \
+  set.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/set include/memory include/new include/basic_definitions \
+  include/system_configuration.h include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  include/deque include/stdexcept include/string include/func_exception \
+  include/vector include/algorithm include/functional \
+  include/type_traits include/associative_base include/list
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/stack.o: \
+  stack.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/stack include/basic_definitions include/system_configuration.h \
+  include/deque include/memory include/new include/exception \
+  include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  include/stdexcept include/string include/func_exception include/vector \
+  include/algorithm include/functional include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/stdexcept.o: \
+  stdexcept.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/exception include/basic_definitions \
+  include/system_configuration.h include/stdexcept include/string \
+  include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/func_exception include/vector include/iterator include/iosfwd \
+  include/algorithm include/functional include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/streambuf.o: \
+  streambuf.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/streambuf include/basic_definitions \
+  include/system_configuration.h include/locale include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/string include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/exception include/memory include/new include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/func_exception include/vector include/iterator include/iosfwd \
+  include/algorithm include/functional include/type_traits include/ios
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/string.o: \
+  string.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/basic_definitions include/system_configuration.h \
+  include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/exception include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/string include/func_exception include/vector include/iterator \
+  include/iosfwd include/algorithm include/functional \
+  include/type_traits include/string_iostream include/istream \
+  include/ios include/locale include/cctype \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/ctype.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/runetype.h \
+  include/streambuf include/istream_helpers include/ostream \
+  include/ostream_helpers
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/typeinfo.o: \
+  typeinfo.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/typeinfo include/exception include/basic_definitions \
+  include/system_configuration.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/utility.o: \
+  utility.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/utility include/basic_definitions \
+  include/system_configuration.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/valarray.o: \
+  valarray.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/valarray include/basic_definitions \
+  include/system_configuration.h include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cmath \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/math.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/architecture/i386/math.h
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/vector.o: \
+  vector.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/vector include/basic_definitions \
+  include/system_configuration.h include/memory include/new \
+  include/exception include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/iterator include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  include/func_exception include/algorithm include/functional \
+  include/type_traits
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/support.o: \
+  support.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/support include/exception include/basic_definitions \
+  include/system_configuration.h include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/typeinfo
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/ios.o: \
+  ios.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/ios include/basic_definitions include/system_configuration.h \
+  include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/locale include/string include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/exception include/memory include/new include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/func_exception include/vector include/iterator include/iosfwd \
+  include/algorithm include/functional include/type_traits \
+  include/ostream include/streambuf include/ostream_helpers \
+  include/cctype \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/ctype.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/runetype.h \
+  include/istream include/istream_helpers include/fstream
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/iostream.o: \
+  iostream.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/iostream include/basic_definitions \
+  include/system_configuration.h include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/exception include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/ios include/locale include/string include/func_exception \
+  include/vector include/iterator include/algorithm include/functional \
+  include/type_traits include/istream include/cctype \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/ctype.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/runetype.h \
+  include/streambuf include/istream_helpers include/ostream \
+  include/ostream_helpers include/fstream include/string_iostream
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/istream.o: \
+  istream.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/istream include/ios include/basic_definitions \
+  include/system_configuration.h include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/locale include/string include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  include/exception include/memory include/new include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/func_exception include/vector include/iterator include/iosfwd \
+  include/algorithm include/functional include/type_traits \
+  include/cctype \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/ctype.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/runetype.h \
+  include/streambuf include/istream_helpers include/ostream \
+  include/ostream_helpers
+/Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/obj/i386/boot2_modules/uClibc++/ostream.o: \
+  ostream.cpp \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/autoconf.h \
+  include/ostream include/basic_definitions \
+  include/system_configuration.h include/iosfwd include/char_traits \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/string.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/cdefs.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/_types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/_types.h \
+  include/exception include/memory include/new include/cstddef \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stddef.h \
+  include/cstdlib \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdlib.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/types.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/machine/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/i386/endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_endian.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/libkern/i386/_OSByteOrder.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/sys/_structs.h \
+  include/iterator_base include/utility include/cstdio \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/stdio.h \
+  include/streambuf include/locale include/string include/func_exception \
+  include/vector include/iterator include/algorithm include/functional \
+  include/type_traits include/ios include/ostream_helpers include/cctype \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/ctype.h \
+  /Users/joriss/Downloads/chameleon/branches/ErmaC/Enoch/i386/include/runetype.h

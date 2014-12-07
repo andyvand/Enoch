@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<pkg-info format-version="2" identifier="org.chameleon.core" version="2.3svn" install-location="/" auth="root">
+	<payload installKBytes="1100" numberOfFiles="19"/>
+</pkg-info>
